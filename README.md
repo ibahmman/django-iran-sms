@@ -22,7 +22,9 @@ A Django-based SMS integration system for simplifying in-country SMS usage in Ir
 
 ```bash
 pip install django-iran-sms
-Configuration
+```
+
+### Configuration
 In your Django project's settings.py, add the following parameters:
 
 python
