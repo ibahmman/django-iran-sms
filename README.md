@@ -83,17 +83,19 @@ curl -X POST https://djangoiransms.chelseru.com/lur/authentication/ \
 ## User Table
 This package automatically creates a User table in the Django admin with two fields:
 
-mobile: Stores the user's mobile number.
-user: A one-to-one relationship with Django's default User model.
+- mobile: Stores the user's mobile number.
+- user: A one-to-one relationship with Django's default User model.
 
 ## JWT Authentication
 This package supports JWT authentication using the rest_framework_simplejwt package. The system is compatible with this authentication method for secure communication with the SMS gateway. Other authentication and login methods are currently under development.
 
 ## Future Plans
-Support for additional SMS providers.
-Enhanced error handling.
-Rate limiting and monitoring.
-Contribution
+- Support for additional SMS providers.
+- Enhanced error handling.
+- Rate limiting and monitoring.
+- Contribution
+
+  
 Contributions are welcome! Please submit pull requests or report issues on the GitHub repository.
 
 ## License
