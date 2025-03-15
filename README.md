@@ -27,9 +27,7 @@ pip install django-iran-sms
 ### Configuration
 In your Django project's settings.py, add the following parameters:
 
-python
-Copy
-Edit
+```bash
 DJANGO_IRAN_SMS = {
     'AUTHENTICATION': 'rest_framework_simplejwt',  # Specify the authentication method
     'SMS_BACKEND': 'PARSIAN_WEBCO_IR',  # Set the SMS provider backend
@@ -44,54 +42,59 @@ DJANGO_IRAN_SMS = {
         }
     }
 }
-Usage
-URL Configuration
+```
+
+## Usage
+### URL Configuration
 In your urls.py, include the following views:
 
 OTPCodeSend: For sending OTP codes.
 Authentication: For handling authentication and optional registration.
-urls.py
-python
-Copy
-Edit
+
+### urls.py
+```bash
 from drfiransms.views import OTPCodeSend, Authentication
 
 urlpatterns += [
     path('lur/send-code/', OTPCodeSend.as_view(), name='send_code'),  # Endpoint to send OTP code
     path('lur/authentication/', Authentication.as_view(), name='authentication')  # Endpoint for authentication
 ]
-Sending Verification Code via API
+```
+
+## Sending Verification Code via API
 To send a POST request for receiving a verification code for a mobile number, use the following structure:
 
-bash
-Copy
-Edit
+```bash
 curl -X POST https://djangoiransms.chelseru.com/lur/send-code/ \
      -H "Content-Type: application/json" \
      -d '{
            "mobile": "09123456789"
          }'
-
+```
+```bash
 curl -X POST https://djangoiransms.chelseru.com/lur/authentication/ \
      -H "Content-Type: application/json" \
      -d '{
            "mobile": "09123456789",
            "code": "108117114"
          }'
-User Table
+```
+
+## User Table
 This package automatically creates a User table in the Django admin with two fields:
 
 mobile: Stores the user's mobile number.
 user: A one-to-one relationship with Django's default User model.
-JWT Authentication
+
+## JWT Authentication
 This package supports JWT authentication using the rest_framework_simplejwt package. The system is compatible with this authentication method for secure communication with the SMS gateway. Other authentication and login methods are currently under development.
 
-Future Plans
+## Future Plans
 Support for additional SMS providers.
 Enhanced error handling.
 Rate limiting and monitoring.
 Contribution
 Contributions are welcome! Please submit pull requests or report issues on the GitHub repository.
 
-License
+## License
 MIT License
