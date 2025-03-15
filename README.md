@@ -27,6 +27,7 @@ pip install django-iran-sms
 ### Configuration
 In your Django project's settings.py, add the following parameters:
 
+### settings.py
 ```bash
 DJANGO_IRAN_SMS = {
     'AUTHENTICATION': 'rest_framework_simplejwt',  # Specify the authentication method
