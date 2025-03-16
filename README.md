@@ -49,8 +49,8 @@ DJANGO_IRAN_SMS = {
 ### URL Configuration
 In your urls.py, include the following views:
 
-OTPCodeSend: For sending OTP codes.
-Authentication: For handling authentication and optional registration.
+- OTPCodeSend: For sending OTP codes.
+- Authentication: For handling authentication and optional registration.
 
 ### urls.py
 ```bash
